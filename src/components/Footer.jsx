@@ -8,17 +8,20 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-5xl px-4 py-6 lg:py-8">
 
      
-        <div className="flex pl-5 items-center gap-8 mb-8 flex-wrap ">
-          {Array(4).fill().map((_, i) => (
-            <div key={i} className="flex items-center text-gray-900 dark:text-white font-semibold text-xs">
-              <FaShippingFast className="text-[#4B3EC4] text-lg mr-2" />
-              <span>Free Shipping over $99</span>
-
-        
-              {i < 3 && <span className="mx-4 text-gray-400">|</span>}
-            </div>
-          ))}
-        </div>
+       <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 mb-6">
+        {Array(4).fill().map((_, i) => (
+          <div
+            key={i}
+            className={`
+              flex items-center text-gray-900 dark:text-white font-semibold text-xs px-4
+              ${i !== 1 && i !== 3 ? 'border-r border-gray-300 dark:border-gray-700' : ''}
+            `}
+          >
+            <FaShippingFast className="text-[#4B3EC4] text-lg mr-2" />
+            <span>Free Shipping over $99</span>
+          </div>
+        ))}
+      </div>
 
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6">
